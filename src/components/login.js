@@ -12,7 +12,7 @@ class Login extends Component {
         isLoginView: true
     }
 
-    inputChanged = event => {
+    inputChanged = event => { 
         let cred = this.state.credentials
         cred[event.target.name] = event.target.value
         this.setState({credentials: cred})
