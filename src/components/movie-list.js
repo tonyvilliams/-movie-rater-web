@@ -12,9 +12,10 @@ function MovieList(props) {
     const removeClicked = movie => {
         fetch(`${process.env.REACT_APP_API_URL}/api/movies/${movie.id}/`, {
             method: 'DELETE',
+            // output: console.log(this.props.token),
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Token ${this.props.token}`
+                'Authorization': `Token ${props.token}`,
+                'Content-Type': 'application/json'
             }
             }).then( resp => props.movieDeleted(movie))
             .catch( error => console.log(error))

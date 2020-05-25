@@ -60,11 +60,23 @@ addMovie = movie => {
     <div className="App">
         <h1><FontAwesome name="film"/><span>Movie Rater 0.1</span></h1>
         <div className="layout">
-              <MovieList movies={this.state.movies} movieClicked={this.loadMovie} movieDeleted={this.movieDeleted} editClicked={this.editClicked} newMovie={this.newMovie} token={this.state.token}/>
+              <MovieList movies={this.state.movies} 
+                token={this.state.token}
+                movieClicked={this.loadMovie} 
+                movieDeleted={this.movieDeleted} 
+                editClicked={this.editClicked} 
+                newMovie={this.newMovie} 
+                />
           <div>
             {!this.state.editedMovie ? 
-                <MovieDetails movie={this.state.selectedMovie} updateMovie={this.loadMovie} token={this.state.token}/>
-               : <MovieForm movie={this.state.editedMovie} cancelForm={this.cancelForm} newMovie={this.addMovie} editedMovie={this.loadMovie} token={this.state.token} /> }             
+                <MovieDetails movie={this.state.selectedMovie} 
+                updateMovie={this.loadMovie}
+                token={this.state.token}/>
+               : <MovieForm movie={this.state.editedMovie}
+               cancelForm={this.cancelForm} 
+               newMovie={this.addMovie} 
+               editedMovie={this.loadMovie} 
+               token={this.state.token} /> }             
           </div>       
         </div>
       </div>

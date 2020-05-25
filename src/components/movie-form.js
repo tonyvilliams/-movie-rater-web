@@ -36,7 +36,7 @@ class MovieForm extends Component {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': 'Token 43611545376d97649fa3a0ea1286453eb4916f63'
+              'Authorization': `Token ${this.props.token}`
             }, // headers
             body: JSON.stringify(this.state.editedMovie)
             }).then ( resp =>  resp.json())
